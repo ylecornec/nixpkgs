@@ -11,11 +11,11 @@
 
 buildPythonPackage rec {
   pname = "pynndescent";
-  version = "0.5.2";
+  version = "0.5.4";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0w87c2v0li2rdbx6qfc2lb6y6bxpdy3jwfgzfs1kcr4d1chj5zfr";
+    sha256 = "221124cbad8e3cf3ed421a4089d80ac5a29d3215e76cb49effc1df887533d2a8";
   };
 
   propagatedBuildInputs = [
