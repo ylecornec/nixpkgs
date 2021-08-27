@@ -1,4 +1,5 @@
 { buildPythonPackage
+, flit
 , flit-core
 , pytestCheckHook
 , testpath
@@ -14,6 +15,7 @@ buildPythonPackage rec {
   dontInstall = true;
 
   checkInputs = [
+    flit
     pytestCheckHook
     testpath
   ];
