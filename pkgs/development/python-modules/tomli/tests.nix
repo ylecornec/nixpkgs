@@ -16,5 +16,6 @@ buildPythonPackage rec {
   checkInputs = [
     pytestCheckHook
     python-dateutil
+    tomli
   ];
 }

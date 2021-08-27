@@ -26,7 +26,7 @@ buildPythonPackage rec {
 
   postInstall = ''
     mkdir $testsout
-    cp -R tests $testsout/tests
+    cp -R benchmark/ pyproject.toml tests/ $testsout/
   '';
 
   pythonImportsCheck = [ "tomli" ];
