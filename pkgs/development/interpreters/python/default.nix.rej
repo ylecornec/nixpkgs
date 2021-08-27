@@ -1,9 +1,0 @@
-diff a/pkgs/development/interpreters/python/default.nix b/pkgs/development/interpreters/python/default.nix	(rejected hunks)
-@@ -221,6 +221,7 @@ in {
-     stripBytecode = true;
-     includeSiteCustomize = false;
-     enableOptimizations = false;
-+    enableLTO = false;
-     mimetypesSupport = false;
-   } // sources.python38)).overrideAttrs(old: {
-     pname = "python3-minimal";
