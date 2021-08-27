@@ -1,12 +1,13 @@
 { stdenv
 , lib
 , buildPythonPackage
-, fetchPypi
+, fetchFromGitHub
 , pythonOlder
 , installShellFiles
 , astroid
 , isort
 , mccabe
+, platformdirs
 , toml
 , pytest-benchmark
 , pytest-xdist
@@ -19,9 +20,11 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.6";
 
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "6758cce3ddbab60c52b57dcc07f0c5d779e5daf0cf50f6faacbef1d3ea62d2a1";
+  src = fetchFromGitHub {
+    owner = "PyCQA";
+    repo = pname;
+    rev = "v${version}";
+    sha256 = "sha256-hkrkgUdC5LO1oSPFL6gvIk0zFpMw45gCmnoRbdPZuRs=";
   };
 
   nativeBuildInputs = [
@@ -32,6 +35,7 @@ buildPythonPackage rec {
     astroid
     isort
     mccabe
+    platformdirs
     toml
   ];
 
