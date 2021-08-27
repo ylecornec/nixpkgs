@@ -62,6 +62,12 @@ buildPythonPackage rec {
     "-n auto"
   ];
 
+  disabledTestPaths = [
+    # tests miss multiple input files
+    # FileNotFoundError: [Errno 2] No such file or directory
+    "tests/pyreverse/test_writer.py"
+  ];
+
   disabledTests = lib.optionals stdenv.isDarwin [
     "test_parallel_execution"
     "test_py3k_jobs_option"
