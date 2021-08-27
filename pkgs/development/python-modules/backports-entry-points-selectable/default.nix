@@ -7,7 +7,6 @@ buildPythonPackage rec {
   src = fetchPypi {
     pname = "backports.entry_points_selectable";
     inherit version;
-    # extension = "tar.gz";
     sha256 = "988468260ec1c196dab6ae1149260e2f5472c9110334e5d51adcb77867361f6a";
   };
 
