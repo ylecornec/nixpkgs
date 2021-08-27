@@ -2,6 +2,7 @@
 , buildPythonPackage
 , fetchPypi
 , pythonOlder
+, async-timeout
 , dbus
 , pytest
 , pytest-trio
@@ -22,6 +23,7 @@ buildPythonPackage rec {
   };
 
   checkInputs = [
+    async-timeout
     dbus
     pytest
     pytest-trio
