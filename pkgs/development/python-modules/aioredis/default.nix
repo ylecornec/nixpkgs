@@ -1,12 +1,18 @@
-{ lib, buildPythonPackage, fetchPypi
-, pkgs, async-timeout, hiredis, isPyPy, isPy27
+{ lib
+, buildPythonPackage
+, fetchPypi
+, async-timeout
+, typing-extensions
+, hiredis
+, isPyPy
+, pythonOlder
 }:
 
 buildPythonPackage rec {
   pname = "aioredis";
   version = "2.0.0";
 
-  disabled = isPy27;
+  disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
@@ -15,6 +21,7 @@ buildPythonPackage rec {
 
   propagatedBuildInputs = [
     async-timeout
+    typing-extensions
   ] ++ lib.optional (!isPyPy) hiredis;
 
   # Wants to run redis-server, hardcoded FHS paths, too much trouble.
