@@ -1,0 +1,15 @@
+diff --git a/src/java_tools/buildjar/java/com/google/devtools/build/buildjar/javac/plugins/dependency/StrictJavaDepsPlugin.java b/src/java_tools/buildjar/java/com/google/devtools/build/buildjar/javac/plugins/dependency/StrictJavaDepsPlugin.java
+index de1ad14a8a..44fb037bd8 100644
+--- a/src/java_tools/buildjar/java/com/google/devtools/build/buildjar/javac/plugins/dependency/StrictJavaDepsPlugin.java
++++ b/src/java_tools/buildjar/java/com/google/devtools/build/buildjar/javac/plugins/dependency/StrictJavaDepsPlugin.java
+@@ -303,8 +303,8 @@ public final class StrictJavaDepsPlugin extends BlazeJavaCompilerPlugin {
+                   : "type " + sym;
+           String message =
+               String.format(
+-                  "[strict] Using %s from an indirect dependency (TOOL_INFO: \"%s\").%s",
+-                  used, toolInfo, (owner.label().isPresent() ? " See command below **" : ""));
++                  "[strict] Using %s from indirect dependency (jarPath: \"%s\") (directJars: \"%s\") (TOOL_INFO: \"%s\").%s",
++                  used, jarPath, directJars, toolInfo, (owner.label().isPresent() ? " See command below **" : ""));
+           diagnostics.add(SjdDiagnostic.create(node.pos, message, source));
+         }
+       }

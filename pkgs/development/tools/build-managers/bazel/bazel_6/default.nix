@@ -176,6 +176,8 @@ stdenv.mkDerivation rec {
     # the prebuilt one does not work in nix world.
     ./java_toolchain.patch
 
+    ./debug.patch
+
     # On Darwin, the last argument to gcc is coming up as an empty string. i.e: ''
     # This is breaking the build of any C target. This patch removes the last
     # argument if it's found to be an empty string.
